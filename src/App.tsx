@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Join from "./Pages/Join";
+import Join from "./pages/Join";
 import "./App.css";
 
 function App() {

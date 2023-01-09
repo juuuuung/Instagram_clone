@@ -1,5 +1,5 @@
-import Image from "../atoms/Image";
-import Text from "../atoms/Text";
+import Image from "../../atoms/Image";
+import Text from "../../atoms/Text";
 
 export default function Adlist() {
   return (

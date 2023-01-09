@@ -1,8 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
 
+type Dispatcher<S> = Dispatch<SetStateAction<S>>;
+
 interface props {
   text: string;
-  state?: Dispatch<SetStateAction<boolean>>;
+  state?: Dispatcher<boolean>;
 }
 
 export default function Button({ text, state }: props) {
