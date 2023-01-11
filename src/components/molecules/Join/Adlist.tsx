@@ -5,7 +5,7 @@ export default function Adlist() {
   return (
     <div>
       <Text text="앱을 다운로드하세요." />
-      <div>
+      <div className="ad">
         <Image src="login/ad/google.png" />
         <Image src="login/ad/micro.png" />
       </div>

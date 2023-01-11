@@ -1,0 +1,45 @@
+@mixin squre($w, $h: null) {
+  width: $w;
+  height: $h;
+}
+
+.Join {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .main-view {
+    display: flex;
+    text-align: center;
+  }
+
+  .ad {
+    div {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      .ad {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+    }
+    img {
+      &:nth-child(1) {
+        @include squre(134px, 40px);
+      }
+      &:nth-child(2) {
+        @include squre(110px, 40px);
+      }
+    }
+  }
+
+  .footer {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+  }
+}

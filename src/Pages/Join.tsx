@@ -1,22 +1,34 @@
-import Adlist from "../components/molecules/Login/Adlist";
-import Selectview from "../components/molecules/Login/Selectview";
-import Login from "../components/organisms/Login";
-import Signup from "../components/organisms/Signup";
+import Adlist from "../components/molecules/Join/Adlist";
+import Selectview from "../components/molecules/Join/Selectview";
+import Login from "../components/organisms/Join/Login";
+import Signup from "../components/organisms/Join/Signup";
+import Image from "../components/atoms/Image";
 
 import { show_login } from "../store/Join";
 import { useAtom } from "jotai";
+import Foot from "../components/molecules/Join/Foot";
+
+import "./styles/Join.scss";
 
 export default function Join() {
   const [show] = useAtom(show_login);
 
   return (
-    <div>
-      <div>{show ? <Login /> : <Signup />}</div>
-      <div>
-        <Selectview />
+    <div className="Join">
+      <div className="main-view">
+        <div>
+          <Image src="login/login_banner.png" />
+        </div>
+        <div>
+          {show ? <Login /> : <Signup />}
+          <Selectview />
+          <div className="ad">
+            <Adlist />
+          </div>
+        </div>
       </div>
-      <div className="ad">
-        <Adlist />
+      <div className="footer">
+        <Foot />
       </div>
     </div>
   );

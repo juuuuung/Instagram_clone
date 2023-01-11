@@ -1,15 +1,13 @@
-import Button from "../atoms/Button";
-import Inputlist from "../molecules/Login/Inputlist";
-import Image from "../atoms/Image";
+import Button from "../../atoms/Button";
+import Inputlist from "../../molecules/Join/Login/Inputlist";
+import Image from "../../atoms/Image";
+import "./styles/Login.scss";
 
 export default function Login() {
   return (
-    <div>
+    <div className="login">
       <div>
-        <Image src="login/login_banner.png" />
-      </div>
-      <div>
-        <div>
+        <div className="main-logo">
           <Image src="logo.png" />
         </div>
         <div className="Inputlist">
