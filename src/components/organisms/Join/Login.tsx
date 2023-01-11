@@ -14,7 +14,7 @@ export default function Login() {
         <div className="login-btn">
           <Button text="로그인" />
         </div>
-        <div className="or"></div>
+        <div className="or">또는</div>
         <div className="facebook-login-btn">
           <Button text="Facebook으로 로그인" />
         </div>

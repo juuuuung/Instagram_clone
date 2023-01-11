@@ -1,3 +1,8 @@
+@mixin squre($w: null, $h: null) {
+  width: $w;
+  height: $h;
+}
+
 .login {
   .main-logo {
     margin: 47px 0 37px;
@@ -18,13 +23,63 @@
   }
 
   .login-btn {
+    margin: 8px;
     button {
       background-color: #4db5f9;
       border: none;
       color: white;
-      width: 268px;
-      height: 32px;
+      @include squre(268px, 32px);
       border-radius: 7px;
+      font: {
+        size: 14px;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .or {
+    display: flex;
+    flex-basis: 8 0%;
+    align-items: center;
+    margin: 0 0 8px 0;
+    padding: 0 23px;
+    color: #8e8e8e;
+    font : {
+      size: 13px;
+      weight: 600;
+    }
+
+    &::before {
+      content: "";
+      flex-grow: 1;
+      @include squre(10px, 0.8px);
+      margin: 10px 16px;
+      background: #dbdbdb;
+    }
+
+    &::after {
+      content: "";
+      flex-grow: 1;
+      @include squre(0, 0.8px);
+      height: 0.8px;
+      margin: 20px 16px;
+      background: #dbdbdb;
+    }
+  }
+
+  .facebook-login-btn {
+    button {
+      background: none;
+      border: none;
+      color: #385185;
+      margin: 0 0 20px;
+    }
+  }
+
+  .forget-pw {
+    a {
+      font-size: 11px;
+      color: black;
     }
   }
 }
