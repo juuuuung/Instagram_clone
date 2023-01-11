@@ -16,15 +16,11 @@ export default function Join() {
   return (
     <div className="Join">
       <div className="main-view">
-        <div>
-          <Image src="login/login_banner.png" />
-        </div>
-        <div>
+        <Image src="login/login_banner.png" />
+        <div className="user-input">
           {show ? <Login /> : <Signup />}
           <Selectview />
-          <div className="ad">
-            <Adlist />
-          </div>
+          <Adlist />
         </div>
       </div>
       <div className="footer">

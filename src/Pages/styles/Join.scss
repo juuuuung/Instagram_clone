@@ -12,6 +12,13 @@
   .main-view {
     display: flex;
     text-align: center;
+
+    .user-input > div:nth-child(1) {
+      @include squre(350px, 400px);
+      border: 0.2px solid #cecece;
+      border-radius: 1px;
+      background-color: #fff;
+    }
   }
 
   .ad {
@@ -19,18 +26,18 @@
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
-
-      .ad {
-        display: flex;
-        flex-flow: row nowrap;
-      }
     }
-    img {
-      &:nth-child(1) {
-        @include squre(134px, 40px);
-      }
-      &:nth-child(2) {
-        @include squre(110px, 40px);
+    .ad-image {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      img {
+        &:nth-child(1) {
+          @include squre(134px, 40px);
+        }
+        &:nth-child(2) {
+          @include squre(110px, 40px);
+        }
       }
     }
   }

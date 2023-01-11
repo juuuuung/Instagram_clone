@@ -3,5 +3,9 @@ interface props {
 }
 
 export default function Image({ src }: props) {
-  return <img src={`img/${src}`} alt="" />;
+  return (
+    <div>
+      <img src={`img/${src}`} alt="" />
+    </div>
+  );
 }

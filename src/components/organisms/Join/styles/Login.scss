@@ -1,0 +1,30 @@
+.login {
+  .main-logo {
+    margin: 47px 0 37px;
+  }
+
+  .inputlist {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 41px;
+    input {
+      padding: 9px 0px 7px 8px;
+      background-color: #fafafa;
+      border: 0.1px solid #dddddd;
+      border-radius: 2px;
+      font-size: 12px;
+      margin: 0 0 6px;
+    }
+  }
+
+  .login-btn {
+    button {
+      background-color: #4db5f9;
+      border: none;
+      color: white;
+      width: 268px;
+      height: 32px;
+      border-radius: 7px;
+    }
+  }
+}

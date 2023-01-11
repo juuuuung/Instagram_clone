@@ -10,9 +10,7 @@ export default function Login() {
         <div className="main-logo">
           <Image src="logo.png" />
         </div>
-        <div className="Inputlist">
-          <Inputlist />
-        </div>
+        <Inputlist />
         <div className="login-btn">
           <Button text="로그인" />
         </div>
