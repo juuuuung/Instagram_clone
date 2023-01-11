@@ -3,9 +3,6 @@ interface props {
 }
 
 export default function Image({ src }: props) {
-  return (
-    <div>
-      <img src={`img/${src}`} alt="" />
-    </div>
-  );
+  // return <img src={`img/${src}`} alt="" />;
+  return <h3>인스타</h3>;
 }

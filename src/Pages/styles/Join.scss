@@ -7,16 +7,21 @@ $main-gray: #dbdbdb;
 
 .Join {
   position: absolute;
-  top: 53%;
+  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -49%);
 
   .main-view {
     display: flex;
+    justify-content: center;
     text-align: center;
 
+    .banner-image {
+      position: relative;
+      bottom: 12px;
+    }
     .user-input {
-      > div:nth-child(1) {
+      > .login {
         @include squre(350px, 390px);
         border: 0.2px solid $main-gray;
         border-radius: 1px;
@@ -29,7 +34,7 @@ $main-gray: #dbdbdb;
         background-color: $white;
         border: 0.2px solid $main-gray;
         margin: 11px 0;
-        padding: 17px;
+        padding: 24px;
         button {
           background: none;
           border: none;
@@ -45,13 +50,15 @@ $main-gray: #dbdbdb;
     div {
       display: flex;
       flex-flow: column nowrap;
-      align-items: center;
     }
     .ad-image {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
+
       img {
+        border-radius: 5px;
+        margin: 14px 4px;
         &:nth-child(1) {
           @include squre(134px, 40px);
         }
@@ -63,8 +70,7 @@ $main-gray: #dbdbdb;
   }
 
   .footer {
-    position: relative;
-    top: 100px;
+    margin: 5rem 0;
     ul {
       display: flex;
       flex-flow: row wrap;

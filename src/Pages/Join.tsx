@@ -10,13 +10,21 @@ import Foot from "../components/molecules/Join/Foot";
 
 import "./styles/Join.scss";
 
+function BannerImage() {
+  return (
+    <div className="banner-image">
+      <Image src="login/login_banner.png" />
+    </div>
+  );
+}
+
 export default function Join() {
   const [show] = useAtom(show_login);
 
   return (
     <div className="Join">
       <div className="main-view">
-        <Image src="login/login_banner.png" />
+        {show ? <BannerImage /> : null}
         <div className="user-input">
           {show ? <Login /> : <Signup />}
           <Selectview />

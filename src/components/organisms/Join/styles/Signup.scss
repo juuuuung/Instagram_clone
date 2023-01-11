@@ -1,0 +1,84 @@
+.signup {
+  width: 350px;
+  height: 573px;
+  border: 0.2px solid #dbdbdb;
+  border-radius: 1px;
+  background-color: #fff;
+
+  .main-logo {
+    padding: 37px 0 5px;
+  }
+
+  .main-text {
+    font-weight: 900;
+    font-size: 16.8px;
+    color: #838383;
+    padding: 1rem 3rem;
+  }
+  .facebook-login-btn {
+    margin: 0 0 1rem;
+    button {
+      color: white;
+      font-weight: 900;
+      background-color: #0095f6;
+      border: none;
+      border-radius: 7px;
+      padding: 0.47em 4.7em;
+    }
+  }
+
+  .or {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 100%;
+    align-items: center;
+    font-size: 13.3px;
+    font-weight: 600;
+    color: #9f9f9f;
+    margin: 0 2.5rem;
+    &::after {
+      content: "";
+      flex-grow: 1;
+      height: 0.2px;
+      background-color: #b8b8b8;
+      margin: 0 0 0 10px;
+    }
+    &::before {
+      content: "";
+      flex-grow: 1;
+      height: 0.2px;
+      background-color: #b7b7b7;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .inputlist {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem 2rem;
+    input {
+      padding: 12px 0px 10px 8px;
+      background-color: #fafafa;
+      border: 0.1px solid #dddddd;
+      border-radius: 2px;
+      font-size: 12px;
+      margin: 0 0 6px;
+    }
+  }
+
+  .sub-text {
+    font-size: 11.5px;
+    padding: 0 40px 10px;
+  }
+
+  .signup-btn {
+    button {
+      color: white;
+      font-weight: 900;
+      background-color: #4db5f9;
+      border: none;
+      border-radius: 7px;
+      padding: 0.45em 9.7em;
+    }
+  }
+}
