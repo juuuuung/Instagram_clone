@@ -1,17 +1,29 @@
+@mixin square($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin flex($procession, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $procession $wrap;
+}
+
 .signup {
   width: 350px;
   height: 573px;
   border: 0.2px solid #dbdbdb;
   border-radius: 1px;
   background-color: #fff;
-
   .main-logo {
     padding: 37px 0 5px;
   }
 
   .main-text {
-    font-weight: 900;
-    font-size: 16.8px;
+    font: {
+      weight: 900;
+      size: 16.8px;
+    }
+
     color: #838383;
     padding: 1rem 3rem;
   }
@@ -28,33 +40,27 @@
   }
 
   .or {
-    display: flex;
-    flex-flow: row nowrap;
+    @include flex(row);
     flex-basis: 100%;
     align-items: center;
-    font-size: 13.3px;
-    font-weight: 600;
+    font: {
+      weight: 900;
+      size: 13.3px;
+    }
     color: #9f9f9f;
     margin: 0 2.5rem;
+    &::before,
     &::after {
       content: "";
       flex-grow: 1;
-      height: 0.2px;
-      background-color: #b8b8b8;
-      margin: 0 0 0 10px;
-    }
-    &::before {
-      content: "";
-      flex-grow: 1;
-      height: 0.2px;
-      background-color: #b7b7b7;
-      margin: 0 10px 0 0;
+      height: 0.8px;
+      margin: 20px 7px;
+      background: #dbdbdb;
     }
   }
 
   .inputlist {
-    display: flex;
-    flex-flow: column nowrap;
+    @include flex(column);
     padding: 1rem 2rem;
     input {
       padding: 12px 0px 10px 8px;

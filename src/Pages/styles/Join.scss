@@ -1,8 +1,13 @@
 $white: #fff;
 $main-gray: #dbdbdb;
-@mixin squre($w, $h: null) {
+@mixin square($w, $h: null) {
   width: $w;
   height: $h;
+}
+
+@mixin flex($procession, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $procession $wrap;
 }
 
 .Join {
@@ -12,7 +17,7 @@ $main-gray: #dbdbdb;
   transform: translate(-50%, -49%);
 
   .main-view {
-    display: flex;
+    @include flex(row);
     justify-content: center;
     text-align: center;
 
@@ -22,14 +27,13 @@ $main-gray: #dbdbdb;
     }
     .user-input {
       > .login {
-        @include squre(350px, 390px);
+        @include square(350px, 390px);
         border: 0.2px solid $main-gray;
         border-radius: 1px;
         background-color: $white;
       }
       .select-view {
-        display: flex;
-        flex-flow: row nowrap;
+        @include flex(row);
         justify-content: center;
         background-color: $white;
         border: 0.2px solid $main-gray;
@@ -39,6 +43,10 @@ $main-gray: #dbdbdb;
           background: none;
           border: none;
           color: #00a2f8;
+          font: {
+            size: 14px;
+            weight: 900;
+          }
           font-size: 14px;
           font-weight: 900;
         }
@@ -48,22 +56,20 @@ $main-gray: #dbdbdb;
 
   .ad {
     div {
-      display: flex;
-      flex-flow: column nowrap;
+      @include flex(column);
     }
     .ad-image {
-      display: flex;
-      flex-flow: row nowrap;
+      @include flex(row);
       justify-content: center;
 
       img {
         border-radius: 5px;
         margin: 14px 4px;
         &:nth-child(1) {
-          @include squre(134px, 40px);
+          @include square(134px, 40px);
         }
         &:nth-child(2) {
-          @include squre(110px, 40px);
+          @include square(110px, 40px);
         }
       }
     }
@@ -72,8 +78,7 @@ $main-gray: #dbdbdb;
   .footer {
     margin: 5rem 0;
     ul {
-      display: flex;
-      flex-flow: row wrap;
+      @include flex(row, wrap);
       justify-content: center;
       font-size: 12px;
       color: #8e8e8e;
