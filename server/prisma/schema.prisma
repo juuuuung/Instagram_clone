@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 데이터 베이스 연동 로직
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 만들려는 모델
+model User{
+  id  Int @id @default(autoincrement())
+  userId String
+  userPw String
+  realName String
+  nickName String
+  posts Post[]
+}
+
+model Post{
+  id Int  @id @default(autoincrement())
+  title String
+  published Boolean
+  like Int
+  author  User  @relation(fields: [authorid], references: [id])
+  authorid Int
+}

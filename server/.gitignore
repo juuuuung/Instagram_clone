@@ -11,6 +11,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+#secret Key
+src/auth/constants.ts
+/.env
+
 # OS
 .DS_Store
 
