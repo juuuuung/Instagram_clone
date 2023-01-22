@@ -14,9 +14,10 @@ export class appRepository {
     });
   }
 
-  async createUser(data: Prisma.UserCreateInput): Promise<User> {
+  async SignUp(accountData: Prisma.UserCreateInput): Promise<User> {
+    console.log(accountData);
     return this.prismaService.user.create({
-      data,
+      data: { ...accountData },
     });
   }
 }

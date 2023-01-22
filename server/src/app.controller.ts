@@ -1,7 +1,15 @@
-import { Controller, Post, UseGuards, Request, Get } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  UseGuards,
+  Request,
+  Get,
+  Body,
+} from '@nestjs/common';
 import { AuthService } from './auth/auth.service';
 import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
 import { LocalAuthGuard } from './auth/guard/local-auth.guard';
+import { Account } from './DTO/Account.dto';
 
 @Controller()
 export class AppController {
@@ -16,5 +24,10 @@ export class AppController {
   @Get('profile')
   async getProfile(@Request() req) {
     return req.user;
+  }
+
+  @Post('signup')
+  async SignUp(@Body() accountData: Account) {
+    return this.authService.SignUp(accountData);
   }
 }

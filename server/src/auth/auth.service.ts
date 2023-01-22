@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { appRepository } from 'src/app.repository';
+import { Account } from 'src/DTO/Account.dto';
 
 @Injectable()
 export class AuthService {
@@ -24,5 +25,9 @@ export class AuthService {
     return {
       access_token: this.jwtService.sign(payload),
     };
+  }
+
+  async SignUp(accountData: Account) {
+    return this.appRepository.SignUp(accountData);
   }
 }
