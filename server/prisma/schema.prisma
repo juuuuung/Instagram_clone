@@ -18,7 +18,6 @@ model User{
   userPw String
   realName String
   nickName String
-  role String
   posts Post[]
 }
 
