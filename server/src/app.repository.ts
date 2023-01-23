@@ -10,7 +10,7 @@ export class appRepository {
   };
   constructor(private readonly prismaService: PrismaService) {}
 
-  async findUser(userId: string, nickName: string = null): Promise<user[]> {
+  async findUser(userId: string, nickName?: string): Promise<user[]> {
     return this.prismaService.user.findMany({
       where: {
         OR: [{ userId }, { nickName }],
