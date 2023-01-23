@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -15,6 +14,7 @@ model post {
   like      Int
   published Boolean
   user      user    @relation(fields: [authorid], references: [id], map: "Post_authorid_fkey")
+
   @@index([authorid], map: "Post_authorid_fkey")
 }
 
