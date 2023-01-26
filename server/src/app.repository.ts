@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma, user } from '@prisma/client';
+import { AccountDto } from './auth/DTO/Account.dto';
 import { PrismaService } from './prisma.service';
 
 @Injectable()
@@ -18,7 +19,7 @@ export class appRepository {
     });
   }
 
-  async SignUp(accountData: Prisma.userCreateInput): Promise<any> {
+  async SignUp(accountData: AccountDto): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
     if (user.length !== 0) {
       return this.responseMSG.failed;

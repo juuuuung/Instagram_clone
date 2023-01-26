@@ -7,9 +7,9 @@ import {
   Body,
 } from '@nestjs/common';
 import { AuthService } from './auth/auth.service';
+import { AccountDto } from './auth/DTO/Account.dto';
 import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
 import { LocalAuthGuard } from './auth/guard/local-auth.guard';
-import { Account } from './DTO/Account.dto';
 
 @Controller()
 export class AppController {
@@ -27,7 +27,7 @@ export class AppController {
   }
 
   @Post('signup')
-  async SignUp(@Body() accountData: Account) {
+  async SignUp(@Body() accountData: AccountDto) {
     return this.authService.SignUp(accountData);
   }
 }
