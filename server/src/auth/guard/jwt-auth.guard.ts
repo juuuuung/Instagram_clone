@@ -21,12 +21,17 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     try {
       return this.jwtService.verify(token, jwtConstants);
     } catch (error) {
-      switch (error.message) {
-        case 'INVALID_TOKEN':
-        case 'TOKEN_IS_ARRAY':
-        case 'NO_USER':
+      const errorArray = [
+        'EXPIRED_TOKEN',
+        'INVALID_TOKEN',
+        'TOKEN_IS_ARRAY',
+        'NO_USER',
+      ];
+
+      switch (true) {
+        case errorArray.includes(error.message, 1):
           throw new HttpException('유효하지 않은 토큰 입니다.', 401);
-        case 'EXPIRED_TOKEN':
+        case errorArray.includes(error.message):
           throw new HttpException('토큰이 만료되었습니다.', 401);
         default:
           throw new HttpException('서버 오류입니다.', 401);
