@@ -20,7 +20,7 @@ export class appRepository {
 
   async SignUp(accountData: Prisma.userCreateInput): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
-    if (user.length > 0) {
+    if (user.length !== 0) {
       return this.responseMSG.failed;
     }
     await this.prismaService.user.create({
