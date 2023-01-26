@@ -14,14 +14,12 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     if (authorization === undefined) {
       throw new HttpException('not good', 401);
     }
-    const token = authorization.replace('Bearer ', '');
-    req.user = this.validateToken(token);
+    req.user = this.validateToken(authorization.replace('Bearer ', ''));
     return true;
   }
   public validateToken(token: string) {
     try {
-      const verify = this.jwtService.verify(token, jwtConstants);
-      return verify;
+      return this.jwtService.verify(token, jwtConstants);
     } catch (error) {
       switch (error.message) {
         case 'INVALID_TOKEN':
