@@ -12,7 +12,7 @@ yarn-error.log*
 lerna-debug.log*
 
 #secret Key
-src/auth/strategy/constants.ts
+src/auth/constants.ts
 /.env
 
 # OS

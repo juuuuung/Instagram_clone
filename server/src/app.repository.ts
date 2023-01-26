@@ -24,7 +24,7 @@ export class appRepository {
       return this.responseMSG.failed;
     }
     await this.prismaService.user.create({
-      data: { ...accountData },
+      data: { ...accountData, role: 'user' },
     });
     return this.responseMSG.success;
   }

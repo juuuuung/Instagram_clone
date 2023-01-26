@@ -3,7 +3,7 @@ import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { LocalStrtegy } from './strategy/local.strategy';
 import { JwtModule } from '@nestjs/jwt';
-import { jwtConstants } from './strategy/constants';
+import { jwtConstants } from './constants';
 import { JwtStrategy } from './strategy/jwt.strategy';
 import { appRepository } from 'src/app.repository';
 import { PrismaService } from 'src/prisma.service';

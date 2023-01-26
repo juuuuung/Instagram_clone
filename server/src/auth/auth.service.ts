@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { Prisma } from '@prisma/client';
 import { appRepository } from 'src/app.repository';
-import { Account } from 'src/DTO/Account.dto';
-import { jwtConstants } from './strategy/constants';
+import { jwtConstants } from './constants';
 
 @Injectable()
 export class AuthService {
@@ -29,7 +29,7 @@ export class AuthService {
     };
   }
 
-  async SignUp(accountData: Account) {
+  async SignUp(accountData: Prisma.userCreateInput) {
     return this.appRepository.SignUp(accountData);
   }
 }

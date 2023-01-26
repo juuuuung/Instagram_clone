@@ -1,14 +1,14 @@
 import { ExecutionContext, HttpException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AuthGuard } from '@nestjs/passport';
-import { jwtConstants } from '../strategy/constants';
+import { jwtConstants } from '../constants';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
   constructor(private readonly jwtService: JwtService) {
     super();
   }
-  canActivate(context: ExecutionContext) {
+  canActivate(context: ExecutionContext): boolean {
     const req = context.switchToHttp().getRequest();
     const { authorization } = req.headers;
     if (authorization === undefined) {

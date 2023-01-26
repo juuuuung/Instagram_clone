@@ -21,8 +21,9 @@ model post {
 model user {
   id       Int    @id @default(autoincrement())
   userId   String
+  userPw   String
   realName String
   nickName String
-  userPw   String
+  role String
   post     post[]
 }
