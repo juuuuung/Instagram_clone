@@ -16,17 +16,14 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     }
     const token = authorization.replace('Bearer ', '');
     req.user = this.validateToken(token);
-    console.log(req.user);
     return true;
   }
   public validateToken(token: string) {
-    console.log('hello');
     try {
       const verify = this.jwtService.verify(token, jwtConstants);
       return verify;
     } catch (error) {
       switch (error.message) {
-        // 토큰에 대한 오류를 판단합니다.
         case 'INVALID_TOKEN':
         case 'TOKEN_IS_ARRAY':
         case 'NO_USER':
