@@ -1,5 +1,5 @@
 export type PayloadDto = {
-  userName: string;
+  nickName: string;
   userId: string;
   role: string;
 };
