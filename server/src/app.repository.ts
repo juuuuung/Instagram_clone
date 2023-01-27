@@ -21,7 +21,7 @@ export class appRepository {
 
   async createUser(accountData: AccountDto): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
-    if (!user[0]) {
+    if (user[0]) {
       return this._responseMSG.failed;
     }
     await this.prismaService.user.create({
