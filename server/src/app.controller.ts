@@ -22,7 +22,6 @@ export class AppController {
     return this.authService.login(req.user);
   }
 
-  // @SetMetadata('roles', ['user'])
   @UseGuards(RolesGuard(['user']))
   @UseGuards(JwtAuthGuard)
   @Get('profile')
