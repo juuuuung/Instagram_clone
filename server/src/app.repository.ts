@@ -19,7 +19,7 @@ export class appRepository {
     });
   }
 
-  async SignUp(accountData: AccountDto): Promise<any> {
+  async createUser(accountData: AccountDto): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
     if (user.length !== 0) {
       return this.responseMSG.failed;

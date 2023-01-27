@@ -1,32 +1,15 @@
-import {
-  Controller,
-  Post,
-  UseGuards,
-  Request,
-  Get,
-  Body,
-} from '@nestjs/common';
+import { Controller, Post, UseGuards, Request, Body } from '@nestjs/common';
 import { AuthService } from './auth/auth.service';
 import { AccountDto } from './auth/DTO/Account.dto';
-import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
 import { LocalAuthGuard } from './auth/guard/local-auth.guard';
-import { RolesGuard } from './auth/guard/role-auth.guard';
 
-@Controller()
+@Controller('auth')
 export class AppController {
   constructor(private readonly authService: AuthService) {}
   @UseGuards(LocalAuthGuard)
-  @Post('auth/login')
+  @Post('login')
   async login(@Request() req) {
-    console.log(req.user);
     return this.authService.login(req.user);
-  }
-
-  @UseGuards(RolesGuard(['user']))
-  @UseGuards(JwtAuthGuard)
-  @Get('profile')
-  async getProfile(@Request() req) {
-    return req.user;
   }
 
   @Post('signup')

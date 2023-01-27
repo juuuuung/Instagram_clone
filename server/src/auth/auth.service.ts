@@ -35,6 +35,6 @@ export class AuthService {
   }
 
   async SignUp(accountData: AccountDto) {
-    return this.appRepository.SignUp(accountData);
+    return this.appRepository.createUser(accountData);
   }
 }
