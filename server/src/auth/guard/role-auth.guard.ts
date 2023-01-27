@@ -14,8 +14,8 @@ export const RolesGuard = (globalRoleList): Type<CanActivate> => {
       context: ExecutionContext,
     ): boolean | Promise<boolean> | Observable<boolean> {
       const request = context.switchToHttp().getRequest();
-      let result = true;
 
+      let result = true;
       if (!globalRoleList.includes(request.user.role)) result = false;
 
       return result;
