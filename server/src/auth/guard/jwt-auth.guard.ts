@@ -17,7 +17,8 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     req.user = this.validateToken(authorization.replace('Bearer ', ''));
     return true;
   }
-  public validateToken(token: string) {
+
+  validateToken(token: string) {
     try {
       return this.jwtService.verify(token, jwtConstants);
     } catch (error) {
