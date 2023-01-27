@@ -5,7 +5,7 @@ import { PrismaService } from './prisma.service';
 
 @Injectable()
 export class appRepository {
-  private responseMSG = {
+  private _responseMSG = {
     success: { msg: 'success' },
     failed: { msg: 'Failed' },
   };
@@ -21,12 +21,12 @@ export class appRepository {
 
   async createUser(accountData: AccountDto): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
-    if (user.length !== 0) {
-      return this.responseMSG.failed;
+    if (!user[0]) {
+      return this._responseMSG.failed;
     }
     await this.prismaService.user.create({
       data: { ...accountData, role: 'user' },
     });
-    return this.responseMSG.success;
+    return this._responseMSG.success;
   }
 }
