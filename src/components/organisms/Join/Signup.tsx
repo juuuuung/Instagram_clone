@@ -2,7 +2,6 @@ import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import Or from "../../atoms/Or";
 import Text from "../../atoms/Text";
-import Inputlist from "../../molecules/Join/Signup/Inputlist";
 
 import "./styles/Signup.scss";
 
@@ -19,7 +18,12 @@ export default function Signup() {
         <Button text="Facebook으로 로그인" />
       </div>
       <Or />
-      <Inputlist />
+      <div className="inputlist">
+        <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
+        <input type="text" placeholder="성명" />
+        <input type="text" placeholder="사용자 이름" />
+        <input type="text" placeholder="비밀번호" />
+      </div>
       <div className="sub-text">
         <Text text="저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다. 더 알아보기" />
       </div>

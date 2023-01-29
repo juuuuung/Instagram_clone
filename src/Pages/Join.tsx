@@ -1,12 +1,11 @@
+import Image from "../components/atoms/Image";
 import Adlist from "../components/molecules/Join/Adlist";
 import Selectview from "../components/molecules/Join/Selectview";
+import Foot from "../components/molecules/Join/Foot";
 import Login from "../components/organisms/Join/Login";
 import Signup from "../components/organisms/Join/Signup";
-import Image from "../components/atoms/Image";
-
 import { show_login } from "../store/Join";
 import { useAtom } from "jotai";
-import Foot from "../components/molecules/Join/Foot";
 
 import "./styles/Join.scss";
 
