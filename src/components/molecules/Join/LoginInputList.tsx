@@ -1,4 +1,10 @@
-export default function LoginInputList() {
+import { LoginDataObj } from "../../../dto/LoginDataObj";
+
+interface Obj {
+  data: LoginDataObj;
+}
+
+export default function LoginInputList({ data }: Obj) {
   return (
     <div className="inputlist">
       <input

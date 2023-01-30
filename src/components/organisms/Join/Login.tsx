@@ -3,13 +3,11 @@ import axios from "axios";
 import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
-
-type Obj = {
-  [index: string]: string;
-};
+import LoginInputList from "../../molecules/Join/LoginInputList";
+import { LoginDataObj } from "../../../dto/LoginDataObj";
 
 export default function Login() {
-  const [data, setData] = useState<Obj>({
+  const [data, setData] = useState<LoginDataObj>({
     userId: "n",
     userPw: "n",
   });
@@ -24,6 +22,7 @@ export default function Login() {
         <Image src="logo.png" />
       </div>
       <div className="inputlist">
+        <LoginInputList data={data} />
         <input
           onChange={(e) => {
             onChangeFunc(e, "userId");

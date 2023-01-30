@@ -1,13 +1,9 @@
-import { SetStateAction } from "jotai";
-import { Dispatch } from "react";
-
-type Obj = {
-  [index: string]: string;
-};
+import { Dispatch, SetStateAction } from "react";
+import { LoginDataObj } from "../dto/LoginDataObj";
 
 export const onChangeFunc = (
-  data: Obj,
-  setData: Dispatch<SetStateAction<Obj>>,
+  data: LoginDataObj,
+  setData: Dispatch<SetStateAction<LoginDataObj>>,
   e: React.ChangeEvent<HTMLInputElement>,
   c: string
 ) => {
