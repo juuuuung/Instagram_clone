@@ -5,9 +5,10 @@ export function onChangeInput(
   data: loginDataObj | null,
   setData: Dispatcher<loginDataObj | null>,
   e: React.ChangeEvent<HTMLInputElement>,
-  c: string
+  mode: string
 ) {
   let copyData = { ...data };
-  copyData[`${c}`] = e.target.value;
+  copyData[`${mode}`] = e.target.value;
   setData(copyData);
+  console.log(data);
 }

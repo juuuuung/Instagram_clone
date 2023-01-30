@@ -1,11 +1,19 @@
+import { useEffect } from "react";
+import { setAccountData } from "../../../store/Join";
 import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import Or from "../../atoms/Or";
 import Text from "../../atoms/Text";
+import SignInputList from "../../molecules/Join/SignInputList";
 
 import "./styles/Signup.scss";
 
 export default function Signup() {
+  useEffect(() => {
+    setAccountData.onMount = (setAtom) => {
+      setAtom({ type: "init" });
+    };
+  }, []);
   return (
     <div className="signup">
       <div className="main-logo">
@@ -18,12 +26,7 @@ export default function Signup() {
         <Button text="Facebook으로 로그인" />
       </div>
       <Or />
-      <div className="inputlist">
-        <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-        <input type="text" placeholder="성명" />
-        <input type="text" placeholder="사용자 이름" />
-        <input type="text" placeholder="비밀번호" />
-      </div>
+      <SignInputList />
       <div className="sub-text">
         <Text text="저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다. 더 알아보기" />
       </div>

@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import { onChangeInput } from "../../../logic/onChangeInput";
 import { accountData } from "../../../store/Join";
 
-export default function LoginInputList() {
+export default function SignInputList() {
   const [data, setData] = useAtom(accountData);
   const onChangeFunc = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -23,7 +23,21 @@ export default function LoginInputList() {
         onChange={(e) => {
           onChangeFunc(e, "userPw");
         }}
-        type="password"
+        type="text"
+        placeholder="성명"
+      />
+      <input
+        onChange={(e) => {
+          onChangeFunc(e, "realName");
+        }}
+        type="text"
+        placeholder="사용자 이름"
+      />
+      <input
+        onChange={(e) => {
+          onChangeFunc(e, "nickName");
+        }}
+        type="text"
         placeholder="비밀번호"
       />
     </div>

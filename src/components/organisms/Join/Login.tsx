@@ -3,15 +3,21 @@ import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
 import LoginInputList from "../../molecules/Join/LoginInputList";
+import { useEffect } from "react";
+import { setAccountData } from "../../../store/Join";
 
 export default function Login() {
+  useEffect(() => {
+    setAccountData.onMount = (setAtom) => {
+      setAtom({ type: "init" });
+    };
+  }, []);
   return (
     <div className="login">
       <div className="main-logo">
         <Image src="logo.png" />
       </div>
       <LoginInputList />
-
       <div className="login-btn">
         <Button text="로그인" />
       </div>

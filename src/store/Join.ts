@@ -2,7 +2,7 @@ import { atom } from "jotai";
 import { loginDataObj } from "../dto/loginDataObj.dto";
 
 interface action {
-  type: "login" | "sign";
+  type: "init";
 }
 
 const signObj = {
@@ -22,9 +22,7 @@ export const show_login = atom(true);
 export const accountData = atom<loginDataObj | null>(loginObj);
 
 export const setAccountData = atom(null, (get, set, action: action) => {
-  if (action.type === "sign") {
+  if (action.type === "init") {
     set(accountData, { ...signObj });
-  } else {
-    set(accountData, { ...loginObj });
   }
 });
