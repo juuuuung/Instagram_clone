@@ -2,8 +2,8 @@ import { Dispatcher } from "../dto/Dispatcher.dto";
 import { loginDataObj } from "../dto/loginDataObj.dto";
 
 export function onChangeInput(
-  data: loginDataObj,
-  setData: Dispatcher<loginDataObj>,
+  data: loginDataObj | null,
+  setData: Dispatcher<loginDataObj | null>,
   e: React.ChangeEvent<HTMLInputElement>,
   c: string
 ) {

@@ -1,4 +1,5 @@
 import { useAtom } from "jotai";
+import { onChangeInput } from "../../../logic/onChangeInput";
 import { accountData } from "../../../store/Join";
 
 export default function LoginInputList() {
@@ -7,14 +8,14 @@ export default function LoginInputList() {
     <div className="inputlist">
       <input
         onChange={(e) => {
-          onChangeFunc(e, "userId");
+          onChangeInput(data, setData, e, "userId");
         }}
         type="text"
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
       <input
         onChange={(e) => {
-          onChangeFunc(e, "userPw");
+          onChangeInput(data, setData, e, "userPw");
         }}
         type="password"
         placeholder="비밀번호"
