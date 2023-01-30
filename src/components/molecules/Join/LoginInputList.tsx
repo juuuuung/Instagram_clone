@@ -1,12 +1,8 @@
-import { Dispatcher } from "../../../dto/Dispatcher.dto";
-import { loginDataObj } from "../../../dto/LoginDataObj.dto";
+import { useAtom } from "jotai";
+import { accountData } from "../../../store/Join";
 
-interface Obj {
-  data: loginDataObj;
-  setData: Dispatcher<loginDataObj>;
-}
-
-export default function LoginInputList({ data, setData }: Obj) {
+export default function LoginInputList() {
+  const [data, setData] = useAtom(accountData);
   return (
     <div className="inputlist">
       <input

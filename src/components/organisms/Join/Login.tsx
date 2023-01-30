@@ -4,17 +4,16 @@ import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
 import LoginInputList from "../../molecules/Join/LoginInputList";
-import { loginDataObj } from "../../../dto/LoginDataObj.dto";
+import { useAtom } from "jotai";
+import { accountData, setAccountData } from "../../../store/Join";
 
 export default function Login() {
-  const [data, setData] = useState<loginDataObj>({
-    userId: "n",
-    userPw: "n",
-  });
+  const [data, setData] = useAtom(accountData);
   const onChangeFunc = (e: React.ChangeEvent<HTMLInputElement>, c: string) => {
     let copyData = { ...data };
     copyData[`${c}`] = e.target.value;
     setData(copyData);
+    console.log(data);
   };
   return (
     <div className="login">
@@ -22,7 +21,7 @@ export default function Login() {
         <Image src="logo.png" />
       </div>
       <div className="inputlist">
-        <LoginInputList data={data} setData={setData} />
+        {/* <LoginInputList /> */}
         <input
           onChange={(e) => {
             onChangeFunc(e, "userId");

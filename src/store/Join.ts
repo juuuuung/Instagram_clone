@@ -1,4 +1,5 @@
 import { atom } from "jotai";
+import { loginDataObj } from "../dto/loginDataObj.dto";
 
 interface action {
   type: "login" | "sign";
@@ -18,15 +19,12 @@ const loginObj = {
 
 export const show_login = atom(true);
 
-export const accountData = atom(loginObj);
+export const accountData = atom<loginDataObj | null>(loginObj);
 
-export const setAccountData = atom(
-  (get) => get(accountData),
-  (get, set, action: action) => {
-    if (action.type === "sign") {
-      set(accountData, { ...signObj });
-    } else {
-      set(accountData, { ...loginObj });
-    }
+export const setAccountData = atom(null, (get, set, action: action) => {
+  if (action.type === "sign") {
+    set(accountData, { ...signObj });
+  } else {
+    set(accountData, { ...loginObj });
   }
-);
+});
