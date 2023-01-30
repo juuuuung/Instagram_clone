@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatcher } from "../../../dto/Dispatcher.dto";
 import { loginDataObj } from "../../../dto/LoginDataObj.dto";
 
 interface Obj {
   data: loginDataObj;
-  setData: Dispatch<SetStateAction<loginDataObj>>;
+  setData: Dispatcher<loginDataObj>;
 }
 
 export default function LoginInputList({ data, setData }: Obj) {
