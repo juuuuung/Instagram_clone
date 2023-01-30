@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
-import { LoginDataObj } from "../dto/LoginDataObj";
+import { loginDataObj } from "../dto/LoginDataObj.dto";
 
 export const onChangeFunc = (
-  data: LoginDataObj,
-  setData: Dispatch<SetStateAction<LoginDataObj>>,
+  data: loginDataObj,
+  setData: Dispatch<SetStateAction<loginDataObj>>,
   e: React.ChangeEvent<HTMLInputElement>,
   c: string
 ) => {

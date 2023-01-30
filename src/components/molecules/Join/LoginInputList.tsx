@@ -1,10 +1,12 @@
-import { LoginDataObj } from "../../../dto/LoginDataObj";
+import { Dispatch, SetStateAction } from "react";
+import { loginDataObj } from "../../../dto/LoginDataObj.dto";
 
 interface Obj {
-  data: LoginDataObj;
+  data: loginDataObj;
+  setData: Dispatch<SetStateAction<loginDataObj>>;
 }
 
-export default function LoginInputList({ data }: Obj) {
+export default function LoginInputList({ data, setData }: Obj) {
   return (
     <div className="inputlist">
       <input

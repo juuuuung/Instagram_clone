@@ -4,10 +4,10 @@ import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
 import LoginInputList from "../../molecules/Join/LoginInputList";
-import { LoginDataObj } from "../../../dto/LoginDataObj";
+import { loginDataObj } from "../../../dto/LoginDataObj.dto";
 
 export default function Login() {
-  const [data, setData] = useState<LoginDataObj>({
+  const [data, setData] = useState<loginDataObj>({
     userId: "n",
     userPw: "n",
   });
@@ -22,7 +22,7 @@ export default function Login() {
         <Image src="logo.png" />
       </div>
       <div className="inputlist">
-        <LoginInputList data={data} />
+        <LoginInputList data={data} setData={setData} />
         <input
           onChange={(e) => {
             onChangeFunc(e, "userId");
