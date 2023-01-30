@@ -14,10 +14,9 @@ export default function Login() {
     userPw: "n",
   });
   const onChangeFunc = (e: React.ChangeEvent<HTMLInputElement>, c: string) => {
-    let copyData: Obj = { ...data };
+    let copyData = { ...data };
     copyData[`${c}`] = e.target.value;
     setData(copyData);
-    console.log(data);
   };
   return (
     <div className="login">
