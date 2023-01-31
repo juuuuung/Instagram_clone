@@ -31,7 +31,7 @@ export default function Signup() {
         <Text text="저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다. 더 알아보기" />
       </div>
       <div className="signup-btn">
-        <Button text="가입" />
+        <Button text="signup" />
       </div>
     </div>
   );

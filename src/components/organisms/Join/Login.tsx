@@ -1,4 +1,3 @@
-import axios from "axios";
 import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
@@ -20,7 +19,7 @@ export default function Login() {
       </div>
       <LoginInputList />
       <div className="login-btn">
-        <Button text="로그인" />
+        <Button text="login" />
       </div>
       <div className="or">또는</div>
       <div className="facebook-login-btn">
