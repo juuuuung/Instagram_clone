@@ -1,11 +1,11 @@
 import { useAtom } from "jotai";
 import { onChangeInput } from "../../../logic/onChangeInput";
 import { accountData } from "../../../store/Join";
-import inputMapArray from "../../../dummyData/inputMapArray.json";
+import InputTypeObject from "../../../dummyData/inputTypeArray.json";
 
 export default function LoginInputList() {
   const [data, setData] = useAtom(accountData);
-  const inputData = [inputMapArray.userId, inputMapArray.userPw];
+  const inputData = [InputTypeObject["userId"], InputTypeObject["userPw"]];
   return (
     <div className="inputlist">
       {inputData.map((input, inx) => {
