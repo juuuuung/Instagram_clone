@@ -4,28 +4,28 @@ import { accountData } from "../../../store/Join";
 
 export default function LoginInputList() {
   const [data, setData] = useAtom(accountData);
-  const onChangeFunc = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    mode: string
-  ) => {
-    onChangeInput(data, setData, e, mode);
-  };
+  const inputMapArray = [
+    {
+      type: "text",
+      mode: "userId",
+      placeholder: "전화번호, 사용자 이름 또는 이메일",
+    },
+    { type: "password", mode: "userPw", placeholder: "비밀번호" },
+  ];
   return (
     <div className="inputlist">
-      <input
-        onChange={(e) => {
-          onChangeFunc(e, "userId");
-        }}
-        type="text"
-        placeholder="전화번호, 사용자 이름 또는 이메일"
-      />
-      <input
-        onChange={(e) => {
-          onChangeFunc(e, "userPw");
-        }}
-        type="password"
-        placeholder="비밀번호"
-      />
+      {inputMapArray.map((input, inx) => {
+        return (
+          <input
+            key={input.mode + inx}
+            onChange={(e) => {
+              onChangeInput(data, setData, e, input.mode);
+            }}
+            type={input.type}
+            placeholder={input.placeholder}
+          />
+        );
+      })}
     </div>
   );
 }
