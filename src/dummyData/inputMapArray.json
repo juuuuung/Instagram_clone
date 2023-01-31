@@ -1,0 +1,14 @@
+{
+  "userId": {
+    "type": "text",
+    "mode": "userId",
+    "placeholder": "전화번호, 사용자 이름 또는 이메일"
+  },
+  "userPw": { "type": "password", "mode": "userPw", "placeholder": "비밀번호" },
+  "realName": { "type": "text", "mode": "realName", "placeholder": "성명" },
+  "nickName": {
+    "type": "text",
+    "mode": "nickName",
+    "placeholder": "사용자 이름"
+  }
+}

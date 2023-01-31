@@ -1,6 +1,7 @@
 import { useAtom } from "jotai";
 import { onChangeInput } from "../../../logic/onChangeInput";
 import { accountData } from "../../../store/Join";
+import inputMapArray from "../../../dummyData/inputMapArray.json";
 
 export default function SignInputList() {
   const [data, setData] = useAtom(accountData);
@@ -12,6 +13,7 @@ export default function SignInputList() {
   };
   return (
     <div className="inputlist">
+      {}
       <input
         onChange={(e) => {
           onChangeFunc(e, "userId");
