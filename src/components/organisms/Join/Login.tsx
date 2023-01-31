@@ -1,3 +1,4 @@
+import axios from "axios";
 import Button from "../../atoms/Button";
 import Image from "../../atoms/Image";
 import "./styles/Login.scss";
@@ -7,7 +8,7 @@ import { setAccountData } from "../../../store/Join";
 import { useAtom } from "jotai";
 
 export default function Login() {
-  const [, setAccount] = useAtom(setAccountData);
+  const [data, setAccount] = useAtom(setAccountData);
   useEffect(() => {
     setAccount({ type: "login" });
   }, []);
@@ -19,7 +20,15 @@ export default function Login() {
       </div>
       <LoginInputList />
       <div className="login-btn">
-        <Button text="login" />
+        <button
+          onClick={async () => {
+            await axios
+              .post(`http://localhost:4000/auth/login`, data)
+              .then((res) => console.log(res));
+          }}
+        >
+          로그인
+        </button>
       </div>
       <div className="or">또는</div>
       <div className="facebook-login-btn">

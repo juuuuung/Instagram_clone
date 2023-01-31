@@ -21,10 +21,13 @@ export const show_login = atom(true);
 
 export const accountData = atom<loginDataObj | null>(loginObj);
 
-export const setAccountData = atom(null, (get, set, action: action) => {
-  if (action.type === "sign") {
-    set(accountData, { ...signObj });
-  } else if (action.type === "login") {
-    set(accountData, { ...loginObj });
+export const setAccountData = atom(
+  (get) => get(accountData),
+  (get, set, action: action) => {
+    if (action.type === "sign") {
+      set(accountData, { ...signObj });
+    } else if (action.type === "login") {
+      set(accountData, { ...loginObj });
+    }
   }
-});
+);
