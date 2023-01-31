@@ -5,13 +5,14 @@ import "./styles/Login.scss";
 import LoginInputList from "../../molecules/Join/LoginInputList";
 import { useEffect } from "react";
 import { setAccountData } from "../../../store/Join";
+import { useAtom } from "jotai";
 
 export default function Login() {
+  const [, setAccount] = useAtom(setAccountData);
   useEffect(() => {
-    setAccountData.onMount = (setAtom) => {
-      setAtom({ type: "init" });
-    };
+    setAccount({ type: "login" });
   }, []);
+
   return (
     <div className="login">
       <div className="main-logo">

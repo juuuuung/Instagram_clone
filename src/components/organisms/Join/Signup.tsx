@@ -1,3 +1,4 @@
+import { useAtom } from "jotai";
 import { useEffect } from "react";
 import { setAccountData } from "../../../store/Join";
 import Button from "../../atoms/Button";
@@ -9,10 +10,9 @@ import SignInputList from "../../molecules/Join/SignInputList";
 import "./styles/Signup.scss";
 
 export default function Signup() {
+  const [, setAccount] = useAtom(setAccountData);
   useEffect(() => {
-    setAccountData.onMount = (setAtom) => {
-      setAtom({ type: "init" });
-    };
+    setAccount({ type: "sign" });
   }, []);
   return (
     <div className="signup">
