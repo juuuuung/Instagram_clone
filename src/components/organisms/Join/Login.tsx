@@ -4,11 +4,12 @@ import Image from "../../atoms/Image";
 import "./styles/Login.scss";
 import LoginInputList from "../../molecules/Join/LoginInputList";
 import { useEffect } from "react";
-import { setAccountData } from "../../../store/Join";
+import { apiKeys, setAccountData } from "../../../store/Join";
 import { useAtom } from "jotai";
 
 export default function Login() {
   const [data, setAccount] = useAtom(setAccountData);
+  const [apiKey, setApiKey] = useAtom(apiKeys);
   useEffect(() => {
     setAccount({ type: "login" });
   }, []);
@@ -24,7 +25,7 @@ export default function Login() {
           onClick={async () => {
             await axios
               .post(`http://localhost:4000/auth/login`, data)
-              .then((res) => console.log(res));
+              .then((res) => setApiKey(res.data.access_token));
           }}
         >
           로그인

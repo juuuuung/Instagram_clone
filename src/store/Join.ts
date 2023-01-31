@@ -19,8 +19,9 @@ const loginObj = {
 
 export const show_login = atom(true);
 
-export const accountData = atom<loginDataObj | null>(loginObj);
+export const apiKeys = atom("");
 
+export const accountData = atom<loginDataObj | null>(loginObj);
 export const setAccountData = atom(
   (get) => get(accountData),
   (get, set, action: action) => {
