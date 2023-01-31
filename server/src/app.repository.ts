@@ -5,10 +5,6 @@ import { PrismaService } from './prisma.service';
 
 @Injectable()
 export class appRepository {
-  private _responseMSG = {
-    success: { msg: 'success' },
-    failed: { msg: 'Failed' },
-  };
   constructor(private readonly prismaService: PrismaService) {}
 
   async findUser(userId: string, nickName?: string): Promise<user[]> {
@@ -22,11 +18,11 @@ export class appRepository {
   async createUser(accountData: AccountDto): Promise<any> {
     const user = await this.findUser(accountData.userId, accountData.nickName);
     if (user[0]) {
-      return this._responseMSG.failed;
+      return { msg: '아이디 존재' };
     }
     await this.prismaService.user.create({
       data: { ...accountData, role: 'user' },
     });
-    return this._responseMSG.success;
+    return { msg: 'Success' };
   }
 }
