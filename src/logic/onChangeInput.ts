@@ -10,5 +10,4 @@ export function onChangeInput(
   let copyData = { ...data };
   copyData[`${mode}`] = e.target.value;
   setData(copyData);
-  console.log(data);
 }
