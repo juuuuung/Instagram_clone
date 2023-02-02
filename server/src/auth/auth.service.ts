@@ -24,6 +24,7 @@ export class AuthService {
 
   async login(user: any) {
     const payload = new PayloadStructure(user).makePayloadObject;
+    // console.log(user.userId + '로그인 성공');
 
     return {
       access_token: this.jwtService.sign(payload, jwtConstants),

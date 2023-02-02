@@ -1,3 +1,3 @@
 export type loginDataObj = {
-  [index: string]: string;
+  [index: string]: string | null;
 };

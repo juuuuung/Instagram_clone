@@ -3,7 +3,7 @@ import { loginDataObj } from "../dto/loginDataObj.dto";
 
 export function onChangeInput(
   data: loginDataObj | null,
-  setData: Dispatcher<loginDataObj | null>,
+  setData: Dispatcher<loginDataObj>,
   e: React.ChangeEvent<HTMLInputElement>,
   mode: string
 ) {

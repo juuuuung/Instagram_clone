@@ -6,22 +6,22 @@ interface action {
 }
 
 const signObj = {
-  userId: "n",
-  userPw: "n",
-  realName: "n",
-  nickName: "n",
+  userId: null,
+  userPw: null,
+  realName: null,
+  nickName: null,
 };
 
 const loginObj = {
-  userId: "n",
-  userPw: "n",
+  userId: null,
+  userPw: null,
 };
 
 export const show_login = atom(true);
 
 export const apiKeys = atom("");
 
-export const accountData = atom<loginDataObj | null>(loginObj);
+export const accountData = atom<loginDataObj>(loginObj);
 export const setAccountData = atom(
   (get) => get(accountData),
   (get, set, action: action) => {
