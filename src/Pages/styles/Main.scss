@@ -1,0 +1,30 @@
+.navigationBar {
+  width: 12%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 2rem 1.25rem;
+  border-right: 0.01px #d6d6d6 solid;
+  svg {
+    width: 90px;
+  }
+  .icons {
+    margin: 2.5rem 0 0 0;
+    .icon {
+      margin: 1.4rem 0;
+    }
+  }
+  .icon {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 16px;
+    span {
+      align-self: center;
+    }
+    img {
+      margin: 0 10px 0 0;
+      width: 26px;
+    }
+  }
+}
